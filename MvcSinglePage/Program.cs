@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using MvcSinglePage.ApplicationServices.Services;
+using MvcSinglePage.ApplicationServices.Services.Contracts;
 using MvcSinglePage.Models;
+using MvcSinglePage.Models.Services.Contracts;
+using MvcSinglePage.Models.Services.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,16 @@ builder.Services.AddControllersWithViews();
 #region [- DbContext() -]
 builder.Services.AddDbContext<ProjectDbContext>(
 options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+#endregion
+
+#region [- AddScoped() -]
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+
+builder.Services.AddScoped<IPersonApplicationService, PersonApplicationService>();
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+builder.Services.AddScoped<IProductApplicationService, ProductApplicationService>();
 #endregion
 
 var app = builder.Build();

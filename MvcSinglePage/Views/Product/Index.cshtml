@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "Product";
+}
+
+
+<button class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#createProductModal">
+    Create New Product +
+</button>
+
+
+<div class="mt-5">
+    <p id="productCount" class="fw-bold"></p>
+    <table class="table table-hover" style="border: 1px solid #f0f0f0 !important">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    DescriptionRecord
+                </th>
+                <th>
+                    UnitPrice
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Create Modal -->
+<div class="modal fade" id="createProductModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Create Product</h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label">Title</label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="titleInput"
+                           placeholder="Enter Title">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Description Record</label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="descriptionInput"
+                           placeholder="Enter  Description">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> Unit Price</label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="unitPriceInput"
+                           placeholder="Enter UnitPrice">
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button type="button"
+                        class="btn btn-primary create-btn">
+                    Save
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Edite Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control title-update-modal"
+                               placeholder="Edite Title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">DescriptionRecord</label>
+                        <input type="text" class="form-control descriptionRecord-update-modal"
+                               placeholder="Edite DescriptionRecord">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">UnitPrice</label>
+                        <input type="text" class="form-control unitPrice-update-modal" placeholder="Edite UnitPrice">
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+                <button class="btn btn-success update-btn">
+                    Save
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                Are you sure you want to delete this item?
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-danger remove-btn">
+                    Remove
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Header -->
+            <div class="modal-header">
+
+                <h5 class="modal-title">Product Details</h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+
+                <p><strong>Id:</strong> <span id="detailId"></span></p>
+
+                <p><strong>Title:</strong> <span id="detailTitle"></span></p>
+
+                <p><strong>DescriptionRecord:</strong> <span id="detailDescriptionRecord"></span></p>
+
+                <p><strong>UnitPrice:</strong> <span id="detailUnitPrice"></span></p>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/Product.js"></script>
